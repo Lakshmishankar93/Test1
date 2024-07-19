@@ -22,13 +22,12 @@ pipeline {
             }
         }
     }
-       post {
+    post {
         always {
-mail bcc: 'laxmi.aadhavan1993@gmail.com', body: """project=>${env.JOB_name}
+            mail bcc: 'laxmi.aadhavan1993@gmail.com', body: """project=>${env.JOB_name}
    build number=>${env.BUILD_NUMBER}
    url=>${env.BUILD_URL}
 Result:=>${currentBuild.result}""", cc: 'laxmi.aadhavan1993@gmail.com', from: '', replyTo: '', subject: "${currentBuild.result}", to: 'laxmi.aadhavan1993@gmail.com'
+        }
+    }
 }
-}
-}
-
