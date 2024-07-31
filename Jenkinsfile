@@ -1,7 +1,7 @@
 pipeline {
     agent any
     stages {
-        stage('nginx installation') {
+        stage('git checkout') {
             steps {
                 script {
                     // Install nginx
